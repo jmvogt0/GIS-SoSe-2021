@@ -1,0 +1,145 @@
+*{
+    margin-top: 0;
+    padding-top: 0;
+}
+h3{
+    padding-left: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+}
+h4{
+    padding-left: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    font-size: 1.5rem;
+}
+p{
+    padding-left: 0.5rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+img{
+    padding-left: 0.5rem;
+}
+/*Schriftart und Hintergrundbild ändern*/
+body{
+    background-image: url(Bilder/background.png);
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*NavLeiste*/
+nav{
+    position:fixed;
+    right:2px;
+    transform: translateY(-415px);
+}
+
+a:hover{
+    color:rgb(209, 0, 0);
+}
+
+.navLine{
+    padding: 15px;
+    font-size: 120%;
+    background-color: rgba(0, 0, 0, 0.377);
+    border-radius: 6px;
+}
+
+.navButton{
+    color: whitesmoke;
+    text-decoration-line: none;
+}
+
+.currentPage{
+    color: rgb(0, 99, 112);
+    text-decoration-line: none;
+}
+.blueColor{
+    color: darkblue;
+}
+#backgroundText{
+    margin:auto;
+    width:80%;
+}
+#youTubeVideo{
+    padding-left: 0.5rem;
+}
+
+#circle{
+    background: darkblue;
+    height: 800px;
+    width: 800px;
+    transform: translateY(-400px);
+    border-radius: 100%;
+    margin-bottom: -400px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+#circle-content{
+    color: white;
+    transform: translateY(450px);
+}
+#circle-content h1{
+    font-size: 5rem;
+    margin: 1rem 1rem 6rem 5rem;
+    letter-spacing: 0px;
+}
+#circle-content2{
+    font-size: 3rem;
+    color: lightgray;
+    letter-spacing: 0px;
+    margin: 1rem 1rem 1rem 18rem;
+    transform: translateY(320px);
+}
+#circle-content3{
+    background-image: url(Bilder/GitHub-Mark-Light-64px.png);
+    display: block;
+    font-size: 3rem;
+    text-indent: -9999px;
+    width: 64px;
+    height: 64px;
+}
+#circle-content3:hover{
+    transform: scale(1.04);
+    filter:invert(20%);
+}
+#posCircle-content3{
+    margin: 6rem 0rem 0rem 37rem;
+    width: 64px;
+    height: 64px;
+}
+#secondNav{
+    background-color: darkblue;
+    color: whitesmoke;
+    border-radius: 4rem;
+    width:300px;
+    margin:auto;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    clip: rect(50px, 0px, 0px, 0px);
+    transform: -300px;
+}
+label{
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+input, textarea, button{
+    background-color: whitesmoke;
+    padding:5px;
+    margin: 5px;
+    border-style:groove;
+    border-color: lightgray;
+}
+input:hover, textarea:hover{
+    border-color: gray;
+}
+button:hover{
+    background-color: lightgray;
+    border-color: green;
+}
+
+.blocksatz{
+    text-align: justify;
+}
+/*3x Element, 3x ID, 3X Klasse*/
