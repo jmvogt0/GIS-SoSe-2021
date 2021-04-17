@@ -24,18 +24,22 @@
                 </div>
             </div>
         </div>
+        <div>
+            <h1 id=überschrift>KONTAKT</h1>
+        </div>
         <nav>
-            <div class="navLine">
-                <a class="navButton" href="index.html"> Portfolio</a>
-                <a class="navButton">|</a>
-                <a class="navButton" href="ueberMich.html"> Über mich</a>
-                <a class="navButton">|</a>
-                <a class="currentPage" href="kontakt.html"> Kontakt</a>
+            <div class="navBar">
+                <div><a class="navButton" href="index.html"> Portfolio</a></div>
+                <div><a class="navButton" id="strich">|</a></div>
+                <div><a class="navButton" href="ueberMich.html"> Über mich</a></div>
+                <div><a class="navButton" id="strich">|</a></div>
+                <div><a class="currentPage" href="kontakt.html"> Kontakt</a></div>
             </div>
         </nav>
     </header>
-    <main>
-        <section id="backgroundText" class="blueColor">
+    <main class="flexbox">
+        <div>
+            <section id="backgroundText">
             <h4>Kontakt über Email:</h4>
             <p>BeispielEmail@mailprovider.de</p>
 
@@ -55,7 +59,13 @@
                 <label> Dieses Formular ist nicht Funktionsfähig aber lustig :)</label><br>
                 <button>Absenden </button><br>
                 <output hidden>Erfolgreich abgesendet! </output>
-            </form>
+        </form>
+        </section>
+        </div>
+        <section class="animation flexbox">
+            <h1>Animationsecke</h1>
+            <div><p>Drück Mich!</p></div>
+            <div><p>Oder MICH!</p></div>
         </section>
     </main>
 </body>

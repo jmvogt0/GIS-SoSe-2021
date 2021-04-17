@@ -28,15 +28,13 @@ body{
     background-image: url(Bilder/background.png);
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
-    width:70%;
-    color:red;
+    width:1300px;
 }
 /*NavLeiste*/
 nav{
     position:sticky;
     top: 0;
     margin-top: 1rem;
-    transform: translateY(-415px);
 }
 
 a:hover{
@@ -56,7 +54,7 @@ a:hover{
 }
 
 .currentPage{
-    color: rgb(0, 99, 112);
+    color: rgb(0, 167, 42);
     text-decoration-line: none;
 }
 .blueColor{
@@ -163,40 +161,90 @@ button:hover{
 .navBar{
     position: fixed;
     display:flex;
-    flex-direction: row-reverse;
-    height: 3em;
-    width: 30%;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
     align-items: center;
     align-content:center;
     background-color: rgba(29, 29, 29, 0.589);
     border-radius: 0.5em;
+    top:0;
 }
 .navBar > div{
     font-size: 1.5em; 
     padding: 0.3em;
 }
-@media (min-width: 601px) and (max-width: 1024px){
+.animation div{
+    height: 100px;
+    width: 300px;
+    background-color: rosybrown;
+    border-style: solid;
+    margin: 1em;
+    border: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.animation div:active{
+    transition: background-color 2s ease-in 0s;
+    background-color: yellow;
+}
+.animation div:nth-child(odd):active{
+    transition: font-size 2s ease-in 0s;
+    font-size: 2rem;
+}
+.animation div:hover{
+    border-style: dotted;
+    border-color: black;
+}
+#überschrift{
+    display: none;
+}
+.flexbox{
+    display: flex;
+    flex-direction: column;
+}
+
+.flexbox >div{
+    background-color: rgba(211, 211, 211, 0.349);
+    border-radius: 0.4em;
+}
+@media (max-width: 1300px){
+    body{
+        width:1000px;
+    }
+}
+@media (max-width: 1024px){
     body{
         width: 90%;
-        color:yellow;
     }
     .container img{
         object-fit:cover;
-        height: 250px;
     }
 }
 @media (max-width: 600px){
     body{
         width: 100%;
-        color:hotpink;
     }
     .container img{
-        object-fit:cover;
-        width: 100%;
+        padding: 0;
     }
     #circle{
         display: none;
     }
+    .navBar{
+        right: 0;
+        flex-direction: column;
+    }
+    #strich{
+        display:none;
+    }
+    #überschrift{
+        display: contents;
+        font-size: 3em;
+        margin: 0.3em;
+    }
+    img{
+        width: 90%;
+    }
 }
-
-
