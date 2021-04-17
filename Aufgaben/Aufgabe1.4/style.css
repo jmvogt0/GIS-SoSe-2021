@@ -236,7 +236,7 @@ button:hover{
         right: 0;
         flex-direction: column;
     }
-    #strich{
+    .strich{
         display:none;
     }
     #überschrift{
