@@ -221,6 +221,31 @@ button:hover{
     .container img{
         object-fit:cover;
     }
+    #circle{
+        height: 40em;
+        width: 35em;
+    }
+    #circle-content h1{
+        font-size: 3rem;
+        margin-left: 8rem;
+        width: 20rem;
+    }
+    #circle-content2{
+        font-size: 2rem;
+        width: 18rem;
+        padding-left: 14rem;
+        padding-bottom: 8rem;
+        width: 15rem;
+        height: 6rem;
+    }
+    #circle-content2 p{
+        padding-top: 0em;
+    }
+    #circle-content3{
+        width: 64px;
+        height: 64px;
+        transform: translateY(150px) translateX(450px);
+    }
 }
 @media (max-width: 600px){
     body{
