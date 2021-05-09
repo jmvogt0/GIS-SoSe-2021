@@ -129,12 +129,12 @@ var Aufgabe2_3_Kapitelaufgabe;
             console.log("Top Speed: " + railVehicleSelected.topSpeed.toString());
             console.log("Farbe: " + railVehicleSelected.color);
         }
+        konfiguratorLabel.appendChild(konfiguratorButton);
         //Der Folgende Code zeigt den Versuch, einen RadioButton statt einem Auswahl-Button zu verwenden
         //konfiguratorLabelContainer.className = "container";
         //konfiguratorLabelContainer.id = konfiguratorLabelContainerID;
         //konfiguratorLabelContainer.textContent = _elementeArray[_loopNumber].name;
         //konfiguratorLabel.appendChild(konfiguratorLabelContainer);
-        konfiguratorLabel.appendChild(konfiguratorButton);
         /*
         //Span und Input des RadioButtons erzeugen
         let konfiguratorSelector: HTMLElement = document.getElementById(konfiguratorLabelContainerID);
