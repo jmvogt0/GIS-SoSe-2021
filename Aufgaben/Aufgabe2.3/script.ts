@@ -211,7 +211,6 @@ namespace Aufgabe2_3_Kapitelaufgabe {
     //Funktion, welche dynamisch, je nach Anzahl an Parametern ein Array mit IDs zurückgibt
     // tslint:disable-next-line: no-any
     export function idGenerator(_kategorieArray: RailVehicle[], _headlineArray: string[]): string [][] {
-        
         let idArray: string [][] = [];
         let headlineIdArray: string [] = [];
 

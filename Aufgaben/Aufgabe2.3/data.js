@@ -5,7 +5,7 @@ var Aufgabe2_3_Kapitelaufgabe;
     //Variable Lokomotive anlegen
     let locomotive1 = new Aufgabe2_3_Kapitelaufgabe.Locomotive("Thomas", 2, 100, "Grün", "Elektro", 1, 2, 1000);
     let locomotive2 = new Aufgabe2_3_Kapitelaufgabe.Locomotive("Lok112", 3, 150, "Rot", "Elektro", 1, 2, 1000);
-    let locomotive3 = new Aufgabe2_3_Kapitelaufgabe.Locomotive("Elias", 5, 395, "Blau", "Diesel", 1, 2, 1000);
+    let locomotive3 = new Aufgabe2_3_Kapitelaufgabe.Locomotive("Lok112", 3, 150, "Rot", "Elektro", 1, 2, 1000);
     //Lokomotive dem Array locomotiveArray hinzufügen
     Aufgabe2_3_Kapitelaufgabe.locomotiveArray.push(locomotive1);
     Aufgabe2_3_Kapitelaufgabe.locomotiveArray.push(locomotive2);
