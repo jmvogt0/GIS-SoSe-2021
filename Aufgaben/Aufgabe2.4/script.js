@@ -1,12 +1,42 @@
 "use strict";
 var Aufgabe2_4;
 (function (Aufgabe2_4) {
+    //Daten aus data.ts JSON String auslesen
+    let headlineArray = JSON.parse(Aufgabe2_4.headlineJSON);
+    let trainObject = JSON.parse(Aufgabe2_4.railVehicleJSON);
+    kategorySelector();
+    function kategorySelector() {
+        let kategoryNumber = 0;
+        //KategorieNummer aus localStorage auslesen
+        let kategoryNumberString = localStorage.getItem("kategoryCounter");
+        //String zu Number konvertieren und um eins erhöhen
+        kategoryNumber = +kategoryNumberString;
+        fillContent(trainObject, headlineArray, kategoryNumber);
+        //Wert der Kategorie um eins erhöhen
+        kategoryCounter();
+    }
     //Content-Boxen erzeugen und darin die Funktion FillElement aufrufen
-    function fillContent(_train, _headlinesArray) {
+    function fillContent(_train, _headlinesArray, _kategoryNumber) {
         let _headlineIdArray = idGenerator(_train, _headlinesArray);
-        //i ist die LoopNumber
-        for (let i = 0; i < _train.locomotive.length; i++) {
-            fillElement(_headlineIdArray, _headlinesArray, i, _train);
+        switch (_kategoryNumber) {
+            case 0:
+                for (let i = 0; i < _train.locomotive.length; i++) {
+                    fillElement(_headlineIdArray, _headlinesArray, i, _train);
+                }
+                break;
+            case 1:
+                for (let i = 0; i < _train.car.length; i++) {
+                    fillElement(_headlineIdArray, _headlinesArray, i, _train);
+                }
+                break;
+            case 2:
+                for (let i = 0; i < _train.specialCar.length; i++) {
+                    fillElement(_headlineIdArray, _headlinesArray, i, _train);
+                }
+                break;
+            default:
+                console.log("Error");
+                break;
         }
     }
     Aufgabe2_4.fillContent = fillContent;
@@ -32,17 +62,69 @@ var Aufgabe2_4;
         let konfiguratorButton = document.createElement("button");
         let buttonId = buttonIdGenerator(_loopNumber);
         //let selectedObjekt: RailVehicle = _elementeArray[_loopNumber];
+        //Button mit Event
         konfiguratorButton.textContent = "Auswählen";
         konfiguratorButton.id = buttonId;
         konfiguratorButton.className = "chooseButton";
-        konfiguratorButton.addEventListener("click", printChosenObject);
+        konfiguratorButton.addEventListener("click", objectSelected);
+        //Wird nach dem Event des Buttons aufgerufen. Speichert daten in den LocalStorag und gibt die Daten in der Konsole aus
+        function objectSelected() {
+            printChosenObject();
+            let chosenObject = _loopNumber;
+            //kategorySelector();
+            //kategoryCounter();
+            //Seite neuladen um neue Inhalte anzuzeigen
+            let kategoryNumber = getKategoryNumber();
+            //Je nach KategorieNummer wird auf die nächste Html-Seite weitergeleitet
+            switch (kategoryNumber) {
+                case 0:
+                    console.log("Test");
+                    break;
+                case 1:
+                    //im LocalStorage einen JSON String ablegen
+                    localStorage.setItem("kategorie1", JSON.stringify(chosenObject));
+                    location.href = "kategory2.html";
+                    break;
+                case 2:
+                    //im LocalStorage einen JSON String ablegen
+                    localStorage.setItem("kategorie2", JSON.stringify(chosenObject));
+                    location.href = "kategory3.html";
+                    break;
+                case 3:
+                    //im LocalStorage einen JSON String ablegen
+                    localStorage.setItem("kategorie3", JSON.stringify(chosenObject));
+                    location.href = "summary.html";
+            }
+        }
         //Ausgewähltes Objekt in der Konsole ausgeben
         function printChosenObject() {
-            let railVehicleSelected = _elementeArray;
-            console.log("Name: " + railVehicleSelected.locomotive[_loopNumber].name);
-            console.log("Typ: " + railVehicleSelected.locomotive[_loopNumber].type);
-            console.log("Top Speed: " + railVehicleSelected.locomotive[_loopNumber].topSpeed.toString());
-            console.log("Farbe: " + railVehicleSelected.locomotive[_loopNumber].color);
+            let kategoryNumber = getKategoryNumber();
+            switch (kategoryNumber) {
+                case 0:
+                    let railVehicleSelected0 = _elementeArray;
+                    console.log("Name: " + railVehicleSelected0.locomotive[_loopNumber].name);
+                    console.log("Typ: " + railVehicleSelected0.locomotive[_loopNumber].type);
+                    console.log("Top Speed: " + railVehicleSelected0.locomotive[_loopNumber].topSpeed.toString());
+                    console.log("Farbe: " + railVehicleSelected0.locomotive[_loopNumber].color);
+                    break;
+                case 1:
+                    let railVehicleSelected1 = _elementeArray;
+                    console.log("Name: " + railVehicleSelected1.car[_loopNumber].name);
+                    console.log("Typ: " + railVehicleSelected1.car[_loopNumber].type);
+                    console.log("Top Speed: " + railVehicleSelected1.car[_loopNumber].topSpeed.toString());
+                    console.log("Farbe: " + railVehicleSelected1.car[_loopNumber].color);
+                    break;
+                case 2:
+                    let railVehicleSelected2 = _elementeArray;
+                    console.log("Name: " + railVehicleSelected2.specialCar[_loopNumber].name);
+                    console.log("Typ: " + railVehicleSelected2.specialCar[_loopNumber].type);
+                    console.log("Top Speed: " + railVehicleSelected2.specialCar[_loopNumber].topSpeed.toString());
+                    console.log("Farbe: " + railVehicleSelected2.specialCar[_loopNumber].color);
+                    break;
+                default:
+                    console.log("Error");
+                    break;
+            }
         }
         konfiguratorLabel.appendChild(konfiguratorButton);
         //InnerDiv erzeugen
@@ -51,6 +133,9 @@ var Aufgabe2_4;
         innerdiv.className = "konfiguratorContent";
         innerdiv.id = konfiguratorContentID;
         innercontentDiv.appendChild(innerdiv);
+        fillInnerDiv(_headlineIdArray, konfiguratorContentID, _loopNumber, contentValueArray, _headlinesArray);
+    }
+    function fillInnerDiv(_headlineIdArray, konfiguratorContentID, _loopNumber, _contentValueArray, _headlinesArray) {
         //Inhalt von InnerDiv
         for (let i = 0; i < _headlinesArray.headlineElements.length; i++) {
             //Create Div
@@ -64,12 +149,13 @@ var Aufgabe2_4;
             let contentTypeContentSpan = document.createElement("span");
             //Inhalt für h4 und span
             contentTypeContentH4.textContent = _headlinesArray.headlineElements[i];
-            contentTypeContentSpan.textContent = contentValueArray[i];
+            contentTypeContentSpan.textContent = _contentValueArray[i];
             //Erstellte Elemente an das Elternelement anhängen
             contentTypeContent.appendChild(contentTypeContentH4);
             contentTypeContent.appendChild(contentTypeContentSpan);
         }
     }
+    Aufgabe2_4.fillInnerDiv = fillInnerDiv;
     //Funktion, welche dynamisch, je nach Anzahl an Parametern ein Array mit IDs zurückgibt
     function idGenerator(_kategorieArray, _headlineArray) {
         let idArray = [];
@@ -90,31 +176,64 @@ var Aufgabe2_4;
     //Informationen der Objekte ausgeben
     function contentValue(_railVehicle, _loopNumber) {
         let contentValueArray = [];
-        contentValueArray.push(_railVehicle.locomotive[_loopNumber].name);
-        contentValueArray.push(_railVehicle.locomotive[_loopNumber].type);
-        contentValueArray.push(_railVehicle.locomotive[_loopNumber].topSpeed.toString());
-        contentValueArray.push(_railVehicle.locomotive[_loopNumber].color);
+        let kategoryNumber = 0;
+        //KategorieNummer aus localStorage auslesen
+        let kategoryNumberString = localStorage.getItem("kategoryCounter");
+        //String zu Number konvertieren
+        kategoryNumber = +kategoryNumberString;
+        switch (kategoryNumber) {
+            case 0:
+                contentValueArray.push(_railVehicle.locomotive[_loopNumber].name);
+                contentValueArray.push(_railVehicle.locomotive[_loopNumber].type);
+                contentValueArray.push(_railVehicle.locomotive[_loopNumber].topSpeed.toString());
+                contentValueArray.push(_railVehicle.locomotive[_loopNumber].color);
+                break;
+            case 1:
+                contentValueArray.push(_railVehicle.car[_loopNumber].name);
+                contentValueArray.push(_railVehicle.car[_loopNumber].type);
+                contentValueArray.push(_railVehicle.car[_loopNumber].topSpeed.toString());
+                contentValueArray.push(_railVehicle.car[_loopNumber].color);
+                break;
+            case 2:
+                contentValueArray.push(_railVehicle.specialCar[_loopNumber].name);
+                contentValueArray.push(_railVehicle.specialCar[_loopNumber].type);
+                contentValueArray.push(_railVehicle.specialCar[_loopNumber].topSpeed.toString());
+                contentValueArray.push(_railVehicle.specialCar[_loopNumber].color);
+                break;
+            default:
+                console.log("Error");
+                break;
+        }
         return contentValueArray;
     }
+    Aufgabe2_4.contentValue = contentValue;
     //IDs für Buttons dynamisch erstellen
     function buttonIdGenerator(_loopNumber) {
         let buttonId = "buttonSelected" + _loopNumber;
         return buttonId;
     }
     Aufgabe2_4.buttonIdGenerator = buttonIdGenerator;
-    //Daten aus data.ts JSON String auslesen
-    let headlineArray = JSON.parse(Aufgabe2_4.headlineJSON);
-    //let headlineArray: Headline = {headlineElements: ["Name:", "Typ:", "MaxSpeed:", "Farbe:"]};
-    console.log(headlineArray);
-    console.log(headlineArray.headlineElements.length);
-    console.log(headlineArray.headlineElements[1]);
-    let trainObject = JSON.parse(Aufgabe2_4.railVehicleJSON);
-    console.log(trainObject);
-    console.log(trainObject.locomotive.length);
-    /*let myObj: Person = JSON.parse(myJSON);
-    console.log(myObj.name);
-    console.log(myObj.age);
-    console.log(myObj);*/
-    fillContent(trainObject, headlineArray);
+    //KategorieCounter: Speichert und liest aus dem localStorage, in welcher Kategorie er sich befindet
+    function kategoryCounter() {
+        //Fürs Debugging
+        console.log("Kategorienummer:" + localStorage.getItem("kategoryCounter"));
+        let kategoryNumber = 0;
+        //KategorieNummer aus localStorage auslesen
+        let kategoryNumberString = localStorage.getItem("kategoryCounter");
+        //String zu Number konvertieren und um eins erhöhen
+        kategoryNumber = +kategoryNumberString;
+        kategoryNumber += 1;
+        //Wert wieder im localStorage ablegen
+        localStorage.setItem("kategoryCounter", JSON.stringify(kategoryNumber));
+    }
+    //Liefert die aktuell im LocalStorage zwischengespeicherte KategorieNummer zurück
+    function getKategoryNumber() {
+        let kategoryNumber = 0;
+        //KategorieNummer aus localStorage auslesen
+        let kategoryNumberString = localStorage.getItem("kategoryCounter");
+        //String zu Number konvertieren
+        kategoryNumber = +kategoryNumberString;
+        return kategoryNumber;
+    }
 })(Aufgabe2_4 || (Aufgabe2_4 = {}));
 //# sourceMappingURL=script.js.map

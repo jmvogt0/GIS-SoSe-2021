@@ -48,19 +48,19 @@ var Aufgabe2_4;
         ],
         "specialCar": [
             {
-                "name": "Wagen1",
+                "name": "SpezialWagen1",
                 "type": "Speisewagen",
                 "color": "Rot",
                 "topSpeed": 140
             },
             {
-                "name": "Wagen2",
+                "name": "SpezialWagen2",
                 "type": "Schlafwagen",
                 "color": "Weiß",
                 "topSpeed": 160
             },
             {
-                "name": "Wagen3",
+                "name": "SpezialWagen3",
                 "type": "Werkstattwagen",
                 "color": "Rot",
                 "topSpeed": 140

@@ -14,4 +14,8 @@ namespace Aufgabe2_4 {
     export interface Headline {
         headlineElements: string [];
     }
+
+    //Zwar kein Interface aber eine Variable die später die Kategoriedurchläufe zählt
+    let kategoryNumber: number = 0;
+    sessionStorage.setItem("kategoryCounter", JSON.stringify(kategoryNumber));
 }
