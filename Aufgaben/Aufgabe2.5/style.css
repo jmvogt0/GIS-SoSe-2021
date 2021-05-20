@@ -80,3 +80,11 @@ div h4 {
 .summaryContent {
   margin-top: 10px;
 }
+
+#serverOutputError {
+  color: red;
+}
+
+#serverOutputMessage {
+  color: green;
+}

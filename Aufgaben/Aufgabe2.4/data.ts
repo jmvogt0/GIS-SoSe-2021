@@ -22,6 +22,12 @@ namespace Aufgabe2_4 {
                 "type": "Dampf",
                 "color": "Schwarz",
                 "topSpeed": 80
+            },
+            {
+                "name": "Lokomotive4",
+                "type": "Dampf",
+                "color": "blue",
+                "topSpeed": 80
             }
         ],
         "car": [
