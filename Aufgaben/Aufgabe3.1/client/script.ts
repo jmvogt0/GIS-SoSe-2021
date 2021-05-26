@@ -1,23 +1,27 @@
 namespace Aufgabe3_1 {
-    async function sendData (): Promise<void> {
-        console.log("HelloWorld");
-        let formData: FormData = new FormData(document.forms[0]);
-        
-        let url: string = "https://gis-sose-2021-jmvogt.herokuapp.com";
+    let formData: FormData = new FormData(document.forms[0]);
+
+
+    console.log("HelloWorld");
+
+    function sendData (): void {
+        let url: RequestInfo = "https://gis-sose-2021-jmvogt.herokuapp.com";
+
+        console.log(url);
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         console.log(url);
-        await fetch(url);
-        //let response: Response = await fetch(url);
-        //let responseString: string = await response.text();
 
-
-        //console.log(responseString);
+        communicate (url);
     }
     document.querySelector("#sendData").addEventListener("click", sendData);
 
+
+    async function communicate (_url: RequestInfo): Promise<void> {
+
+        let response: Response = await fetch(_url);
+        let responseString: string = await response.text();
+        console.log(responseString);
+    }
 }
-
-
-

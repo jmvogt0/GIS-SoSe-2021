@@ -13,8 +13,8 @@ export namespace P_3_1Server {
 
     function handleListen(): void {
         console.log("Listening");
+        console.log(port);
     }
-
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("I hear voices!");

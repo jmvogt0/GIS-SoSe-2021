@@ -14,6 +14,7 @@ var P_3_1Server;
     server.listen(port);
     function handleListen() {
         console.log("Listening");
+        console.log(port);
     }
     function handleRequest(_request, _response) {
         console.log("I hear voices!");
