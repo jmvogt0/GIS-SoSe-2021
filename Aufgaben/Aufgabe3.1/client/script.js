@@ -4,7 +4,7 @@ var Aufgabe3_1;
     let formData = new FormData(document.forms[0]);
     console.log("HelloWorld");
     function sendData() {
-        let url = "https://gis-sose-2021-jmvogt.herokuapp.com";
+        let url = "https://gis-sose-2021-jmvogt.herokuapp.com/";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
