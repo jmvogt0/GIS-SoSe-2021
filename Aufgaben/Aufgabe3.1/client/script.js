@@ -5,11 +5,9 @@ var Aufgabe3_1;
     console.log("HelloWorld");
     function sendData() {
         let url = "https://gis-sose-2021-jmvogt.herokuapp.com";
-        console.log(url);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
-        console.log(url);
         communicate(url);
     }
     document.querySelector("#sendData").addEventListener("click", sendData);

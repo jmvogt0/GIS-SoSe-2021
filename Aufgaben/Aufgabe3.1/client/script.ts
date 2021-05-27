@@ -6,12 +6,9 @@ namespace Aufgabe3_1 {
 
     function sendData (): void {
         let url: RequestInfo = "https://gis-sose-2021-jmvogt.herokuapp.com";
-
-        console.log(url);
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
-        console.log(url);
 
         communicate (url);
     }
