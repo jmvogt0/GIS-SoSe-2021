@@ -1,6 +1,6 @@
 "use strict";
-var Aufgabe3_1;
-(function (Aufgabe3_1) {
+var Aufgabe3_2;
+(function (Aufgabe3_2) {
     //Synchrone Funktion SendData, welche die URL erweitert
     function sendDataHtml() {
         let url = "https://gis-sose-2021-jmvogt.herokuapp.com/html";
@@ -35,5 +35,5 @@ var Aufgabe3_1;
     //Buttons/
     document.querySelector("#sendDataHtml").addEventListener("click", sendDataHtml);
     document.querySelector("#sendDataJson").addEventListener("click", sendDataJson);
-})(Aufgabe3_1 || (Aufgabe3_1 = {}));
+})(Aufgabe3_2 || (Aufgabe3_2 = {}));
 //# sourceMappingURL=script.js.map

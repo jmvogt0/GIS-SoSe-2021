@@ -1,4 +1,4 @@
-namespace Aufgabe3_1 {
+namespace Aufgabe3_2 {
 
     //Synchrone Funktion SendData, welche die URL erweitert
     function sendDataHtml (): void {
