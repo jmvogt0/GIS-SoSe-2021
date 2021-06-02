@@ -32,7 +32,7 @@ var Aufgabe3_1;
         let responseString = await response.json();
         console.log(responseString);
     }
-    //Buttons
+    //Buttons/
     document.querySelector("#sendDataHtml").addEventListener("click", sendDataHtml);
     document.querySelector("#sendDataJson").addEventListener("click", sendDataJson);
 })(Aufgabe3_1 || (Aufgabe3_1 = {}));

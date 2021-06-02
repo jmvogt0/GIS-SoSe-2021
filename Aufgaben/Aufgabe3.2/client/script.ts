@@ -35,7 +35,7 @@ namespace Aufgabe3_1 {
         console.log(responseString);
     }
 
-    //Buttons
+    //Buttons/
     document.querySelector("#sendDataHtml").addEventListener("click", sendDataHtml);
     document.querySelector("#sendDataJson").addEventListener("click", sendDataJson);
 }
