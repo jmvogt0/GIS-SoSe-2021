@@ -4,6 +4,7 @@ var Aufgabe3_2;
     //Synchrone Funktion SendData, welche die URL erweitert
     function sendDataHtml() {
         let url = "https://gis-sose-2021-jmvogt.herokuapp.com/html";
+        //let url: string = "http://localhost:8100/html";
         let formData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
@@ -20,6 +21,7 @@ var Aufgabe3_2;
     }
     function sendDataJson() {
         let url = "https://gis-sose-2021-jmvogt.herokuapp.com/json";
+        //let url: string = "http://localhost:8100/json";
         let formData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
