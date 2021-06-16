@@ -12,8 +12,9 @@ var Task3_4;
         let response = await fetch(url);
         //wenn eine response vorliegt ausgabe tätigen
         if (response != undefined) {
-            let answerOutput = document.getElementById("answer");
-            answerOutput.innerHTML = "Daten an Datenbank gesendet";
+            let answerOutput = document.getElementById("confirmation");
+            answerOutput.textContent = "Daten an Datenbank gesendet";
+            console.log("Daten erfolgreich gesendet");
         }
     }
     async function getData() {

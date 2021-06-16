@@ -10,8 +10,9 @@ namespace Task3_4 {
         let response: Response = await fetch(url);
         //wenn eine response vorliegt ausgabe tätigen
         if (response != undefined) {
-            let answerOutput: HTMLElement = document.getElementById("answer");
-            answerOutput.innerHTML = "Daten an Datenbank gesendet";
+            let answerOutput: HTMLElement = document.getElementById("confirmation");
+            answerOutput.textContent = "Daten an Datenbank gesendet";
+            console.log("Daten erfolgreich gesendet");
         }
     }
 
