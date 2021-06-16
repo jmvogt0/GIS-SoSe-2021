@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <h1>Bestellung</h1>
+        <p>Name</p>
+        <input type="text" name="name">
+        <h4>Eissorte</h4>
+        <input type="radio" name="iceSelection" value="Erdbeere">
+        <label for="strawberrie">Erdbeere</label>
+        <input type="radio" name="iceSelection" value="Vanille">
+        <label for="vanille">Vanille</label>
+        <h4>Behälter</h4>
+        <label for="box">Behälter:</label>
+        <select name="box">
+            <option value="waffel">Waffel</option>
+            <option value="becher">Becher</option>
+        </select>
+    </form>
+    <button id="sendData">Abschicken</button>
+    <button id="printData">Daten anzeigen</button>
+
+    <div class= "container" id="answer"></div>
+
+</body>
+</html>

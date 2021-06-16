@@ -44,6 +44,7 @@ export namespace P_3_2Server {
                 _response.write("<p>" + clientInformation.lastname + "</p>");
                 _response.write("<p>" + clientInformation.age + "</p>");
                 _response.write("<p>" + clientInformation.postcode + "</p>");
+                _response.write("<div> </div>");
             }
 
             //JSON

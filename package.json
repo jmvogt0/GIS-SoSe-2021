@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "@types/node": "^15.6.1"
+    "@types/mongodb": "^3.6.18",
+    "@types/node": "^15.6.1",
+    "mongodb": "^3.6.9"
   },
   "name": "gis-sose-2021",
   "description": "GIS workshop @HFU",
@@ -8,7 +10,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgaben/Aufgabe3.2/server/server.js"
+    "start": "node Aufgaben/Aufgabe3.4/server/server.js"
   },
   "repository": {
     "type": "git",
