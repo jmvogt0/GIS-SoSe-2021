@@ -52,8 +52,11 @@ namespace Endabgabe {
         button.removeEventListener("click", stopGame);
         button.addEventListener("click", startGame);
         button.textContent = "Start New Game";
-
+        localStorage.clear();
         disablePointerEvents();
+        getData();
+
+        document.getElementById("passedTime").textContent = "";
     }
 
     let timerNumber: number;    

@@ -16,6 +16,7 @@ var Endabgabe;
     function displayImageData() {
         let dataArray = JSON.parse(localStorage.getItem("dataArray"));
         let container = document.getElementById("container1");
+        container.textContent = "";
         for (let i = 0; i < dataArray.length; i++) {
             let container2 = document.createElement("div");
             container2.className = "container2";
@@ -56,9 +57,8 @@ var Endabgabe;
         changeImageCommunicate(url);
     }
     async function changeImageCommunicate(_url) {
-        let response = await fetch(_url);
-        console.log(response);
-        displayImageData();
+        await fetch(_url);
+        getImageData();
     }
     //Nummer von der ID extrahieren
     function getPictureId(_id) {

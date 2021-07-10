@@ -17,6 +17,20 @@ var Endabgabe;
         let scoreArray = JSON.parse(localStorage.getItem("scoreArray"));
         let container1 = document.getElementById("container1");
         container1.className = "container1";
+        //Sortieren
+        for (let i = 0; i < scoreArray.length - 1; i++) {
+            for (let j = i + 1; j < scoreArray.length; j++) {
+                if (scoreArray[i].duration < scoreArray[j].duration) {
+                    let x;
+                    x = scoreArray[i];
+                    scoreArray[i] = scoreArray[j];
+                    scoreArray[j] = x;
+                }
+            }
+        }
+        //Array umdrehen
+        scoreArray.reverse();
+        //Ausgabe
         for (let i = 0; i < scoreArray.length; i++) {
             //Elemente erstellen
             let container2 = document.createElement("div");

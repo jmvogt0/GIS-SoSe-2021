@@ -18,6 +18,7 @@ namespace Endabgabe {
         let dataArray: Memorycard [] = JSON.parse(localStorage.getItem("dataArray"));
 
         let container: HTMLElement = document.getElementById("container1");
+        container.textContent = "";
 
         for (let i: number = 0; i < dataArray.length; i++) {
             let container2: HTMLDivElement = document.createElement("div");
@@ -43,6 +44,7 @@ namespace Endabgabe {
             container.appendChild(container2);
         }
     }
+
     //Bild in der Datenbank ändern
     function changeImage(_event: Event): void {
         let target: HTMLElement = <HTMLElement> _event.target;
@@ -61,9 +63,8 @@ namespace Endabgabe {
         changeImageCommunicate(url);
     }
     async function changeImageCommunicate (_url: RequestInfo): Promise <void> {
-        let response: Response = await fetch(_url);
-        console.log(response);
-        displayImageData();
+        await fetch(_url);
+        getImageData();
     }
 
     //Nummer von der ID extrahieren
