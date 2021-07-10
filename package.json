@@ -10,7 +10,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgaben/Aufgabe3.4/server/server.js"
+    "start": "node Endabgabe/server/server.js"
   },
   "repository": {
     "type": "git",
