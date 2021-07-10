@@ -25,10 +25,6 @@ var Endabgabe;
         if (response != undefined) {
             console.log("Daten erfolgreich gesendet");
         }
-        if (response == undefined) {
-            console.log("pus");
-        }
-        console.log(response);
         location.href = "score.html";
     }
 })(Endabgabe || (Endabgabe = {}));

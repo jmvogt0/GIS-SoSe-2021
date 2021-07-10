@@ -41,19 +41,10 @@ var Endabgabe;
     }
     //Spiel stoppen
     function stopGame() {
-        //MemoryArea zurücksetzen
-        buildMemoryArea();
+        //Timer stoppen und Seite dann neuladen sowie LocalStorage zurücksetzen
         stopTimer();
-        //Button ändern
-        let button = document.getElementById("stopGame");
-        button.id = "startGame";
-        button.removeEventListener("click", stopGame);
-        button.addEventListener("click", startGame);
-        button.textContent = "Start New Game";
         localStorage.clear();
-        disablePointerEvents();
-        getData();
-        document.getElementById("passedTime").textContent = "";
+        location.href = "memory.html";
     }
     let timerNumber;
     function startTimer() {
@@ -97,7 +88,6 @@ var Endabgabe;
     function selectMemoryCard(_event) {
         let target = _event.target;
         let cardRotated;
-        //--TODO-- wenn die 2. KArte angeklickt wurde auch das EVENT entfernen, bis beide wieder umgedeckt sind*
         //Auslesen, ob schon eine Karte umgedreht wurde
         cardRotated = JSON.parse(localStorage.getItem("1cardRotated"));
         //Wenn bisher keine Karte umgedreht wurde Karte aufdecken und cardCounter um 1 erhöhen
@@ -133,10 +123,10 @@ var Endabgabe;
             }
             //Auslesen ob noch eine Karte umgedreht werden muss, sonst Spiel beenden
             if (+localStorage.getItem("cardCounter") >= 8) {
-                stopGame();
-                location.href = "userData.html";
+                //PlayTime berechnen und dann neue Seite aufrufen
                 let playTime = (new Date().getTime()) - +localStorage.getItem("startTime");
                 localStorage.setItem("playTime", playTime.toString());
+                location.href = "userData.html";
             }
         }
         function rotateBack() {
